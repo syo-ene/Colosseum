@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootFrame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <!-- メイン UI（左ボード＋中央カード＋右 UI） -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- 🎲 左側のサイコロ盤 -->
+        <LinearLayout
+            android:id="@+id/boardArea"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <!-- 7つのマス -->
+            <FrameLayout
+                android:id="@+id/board_cell_1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#FFFFFF">
+
+                <!-- 赤い駒（初期位置） -->
+                <!--                <View-->
+                <!--                    android:id="@+id/redPiece"-->
+                <!--                    android:layout_width="24dp"-->
+                <!--                    android:layout_height="24dp"-->
+                <!--                    android:layout_gravity="center"-->
+                <!--                    android:background="@drawable/red_circle" />-->
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/board_cell_2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#555555" />
+
+            <FrameLayout
+                android:id="@+id/board_cell_3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#FFFFFF" />
+
+            <FrameLayout
+                android:id="@+id/board_cell_4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#555555" />
+
+            <FrameLayout
+                android:id="@+id/board_cell_5"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#FFFFFF" />
+
+            <FrameLayout
+                android:id="@+id/board_cell_6"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#555555" />
+
+            <FrameLayout
+                android:id="@+id/board_cell_7"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#FFFFFF">
+
+                <!-- 青い駒（初期位置） -->
+                <!--                <View-->
+                <!--                    android:id="@+id/bluePiece"-->
+                <!--                    android:layout_width="24dp"-->
+                <!--                    android:layout_height="24dp"-->
+                <!--                    android:layout_gravity="center"-->
+                <!--                    android:background="@drawable/blue_circle" />-->
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <!-- 中央の使用カードエリア -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.6"
+            android:gravity="center_horizontal"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:id="@+id/enemyUse"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="#FFCCDD"
+                android:layout_marginBottom="4dp" />
+
+            <LinearLayout
+                android:id="@+id/userUse"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="#CCEEFF"
+                android:layout_marginBottom="4dp" />
+
+        </LinearLayout>
+
+        <!-- 右側 UI：手札と説明文 -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:gravity="center_horizontal"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:id="@+id/enemyHand"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="#FF9999"
+                android:layout_marginBottom="4dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="#FFCCDD"
+                android:layout_marginBottom="4dp" >
+
+                <TextView
+                    android:id="@+id/enemyName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:autoSizeMaxTextSize="60sp"
+                    android:autoSizeMinTextSize="10sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:padding="4dp"
+                    android:text=""
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/enemyText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:autoSizeMaxTextSize="40sp"
+                    android:autoSizeMinTextSize="7sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:padding="4dp"
+                    android:text=""
+                    android:textColor="#000000" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:background="#CCEEFF"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/userName"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:autoSizeMaxTextSize="60sp"
+                        android:autoSizeMinTextSize="10sp"
+                        android:autoSizeStepGranularity="2sp"
+                        android:autoSizeTextType="uniform"
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:text=""
+                        android:textColor="#000000" />
+
+                    <TextView
+                        android:id="@+id/userText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:autoSizeMaxTextSize="40sp"
+                        android:autoSizeMinTextSize="7sp"
+                        android:autoSizeStepGranularity="2sp"
+                        android:autoSizeTextType="uniform"
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:text=""
+                        android:textColor="#000000" />
+
+                </LinearLayout>
+
+
+<!--                <Button-->
+<!--                    android:id="@+id/button3"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+
+<!--                    android:text="res" />-->
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/userHand"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="#6699FF" />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/buttonLine"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="4dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/resetButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:text="R"
+                android:autoSizeMaxTextSize="60sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="2sp"
+                android:autoSizeTextType="uniform"/>
+
+            <Button
+                android:id="@+id/plusButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:text="+"
+                android:autoSizeMaxTextSize="60sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="2sp"
+                android:autoSizeTextType="uniform"/>
+
+            <Button
+                android:id="@+id/minusButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:text="-"
+                android:autoSizeMaxTextSize="60sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="2sp"
+                android:autoSizeTextType="uniform"/>
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+
+    <!-- 🌟 カットイン用オーバーレイ -->
+    <ImageView
+        android:id="@+id/cutIn11"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/cut_in_11"
+        android:visibility="gone" />
+
+</FrameLayout>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ColosseumAp</string>
+<!--    カードの名前-->
+
+    <string name="move1_name">ステップ</string>
+    <string name="move2_name">ダッシュ</string>
+
+    <string name="spell8_name">ウインドアクセル</string>
+
+
+<!--    カードの能力-->
+    <string name="move1_text">②1マス進む</string>
+    <string name="move2_text">②2マス進む</string>
+
+    <string name="spell8_text">②3マス進む</string>
+</resources>
